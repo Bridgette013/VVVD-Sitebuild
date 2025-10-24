@@ -1,320 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VVVDigitals - Commanding Motion</title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Inter Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>VVVDigitals - Commanding Motion with Pure Language</title>
+    <meta name="description" content="Merging automation and artistry. High-impact content systems running at the speed of imagination.">
     
-    <style>
-        /* Custom CSS variables based on the Brand Manifesto */
-        :root {
-            --vvv-purple: #6246EA;
-            --vvv-coral: #E9622D;
-            --vvv-charcoal: #0C0C0E;
-            --vvv-surface: #141418;
-            --vvv-text: #E9E9E9;
-            --vvv-muted: #B9B9C0;
-            --vvv-divider: #24242A;
-            --vvv-grad: linear-gradient(90deg, var(--vvv-coral) 0%, var(--vvv-purple) 100%);
-        }
-        
-        /* Apply the background charcoal and Inter font globally */
-        body {
-            background-color: var(--vvv-charcoal);
-            color: var(--vvv-text);
-            font-family: 'Inter', sans-serif;
-            min-height: 100vh;
-        }
-
-        /* Utility for the Signature Gradient Text */
-        .text-vvv-gradient {
-            background: var(--vvv-grad);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        /* Custom button styling for Coral accent */
-        .btn-coral {
-            background-color: var(--vvv-coral);
-            transition: background-color 0.3s ease, transform 0.1s ease;
-            box-shadow: 0 4px 6px -1px rgba(233, 98, 45, 0.4), 0 2px 4px -2px rgba(233, 98, 45, 0.4);
-        }
-        .btn-coral:hover {
-            background-color: #f77a4a; /* Slightly lighter coral on hover */
-            transform: translateY(-1px);
-        }
-        .btn-coral:active {
-            transform: translateY(0);
-        }
-        
-        /* Custom button styling for Purple action */
-        .btn-purple {
-            background-color: var(--vvv-purple);
-            transition: background-color 0.3s ease, transform 0.1s ease;
-            box-shadow: 0 4px 6px -1px rgba(98, 70, 234, 0.4), 0 2px 4px -2px rgba(98, 70, 234, 0.4);
-        }
-        .btn-purple:hover {
-            background-color: #7a63eb; /* Slightly lighter purple on hover */
-            transform: translateY(-1px);
-        }
-        .btn-purple:active {
-            transform: translateY(0);
-        }
-        .btn-purple:disabled {
-            background-color: #3b308e;
-            cursor: not-allowed;
-            opacity: 0.6;
-            box-shadow: none;
-        }
-        /* Loading Spinner */
-        .loader {
-            border: 4px solid var(--vvv-surface);
-            border-top: 4px solid var(--vvv-coral);
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
-
-    <script>
-        // Customizing Tailwind to use the VVVDigitals palette
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'vvv-purple': 'var(--vvv-purple)',
-                        'vvv-coral': 'var(--vvv-coral)',
-                        'vvv-charcoal': 'var(--vvv-charcoal)',
-                        'vvv-surface': 'var(--vvv-surface)',
-                        'vvv-text': 'var(--vvv-text)',
-                        'vvv-muted': 'var(--vvv-muted)',
-                        'vvv-divider': 'var(--vvv-divider)',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-
-   
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Load Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Core Styles -->
+    <link rel="stylesheet" href="assets/css/vvv-theme.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <header class="sticky top-0 z-50 bg-vvv-charcoal/95 backdrop-blur-sm shadow-lg border-b border-vvv-divider">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <!-- Logo: Gradient 'VVVDigitals' Text Mark -->
-            <a href="#" class="text-2xl font-extrabold tracking-tight text-vvv-gradient uppercase">
-                VVVDigitals
+    <!-- Navigation -->
+    <header id="nav-header" class="nav-header">
+        <nav class="nav-container">
+            <a href="/" class="logo-mark">
+                <span class="logo-text">VVVDigitals</span>
             </a>
             
-            <!-- Menu Items -->
-            <div class="flex space-x-6 text-sm font-medium">
-                <a href="#portfolio" class="hover:text-vvv-coral transition-colors">Deployments</a>
-                <a href="#engine" class="hover:text-vvv-coral transition-colors">Engine</a>
-                <a href="#contact" class="hover:text-vvv-coral transition-colors">Contact</a>
+            <button class="mobile-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            
+            <div class="nav-menu">
+                <a href="/" class="nav-link active">Home</a>
+                <a href="/about.html" class="nav-link">Manifesto</a>
+                <a href="/services.html" class="nav-link">Systems</a>
+                <a href="/blog/" class="nav-link">Essays</a>
+                <a href="/contact.html" class="nav-link nav-cta">Contact</a>
             </div>
         </nav>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <!-- 01. Hero Section: Cinematic Tone -->
-        <section class="py-20 md:py-32 text-center">
-            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold leading-tight tracking-tighter mb-4">
-                <span class="text-vvv-gradient block">Commanding Motion</span>
-                <span class="block text-vvv-text">with Pure Language.</span>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1 class="hero-title">
+                <span class="gradient-text">Commanding Motion</span>
+                <span class="subtitle">with Pure Language.</span>
             </h1>
-            <!-- Sample Copy: Short, smart, cinematic, controlled energy -->
-            <p class="text-xl sm:text-2xl text-vvv-muted max-w-3xl mx-auto mb-8">
-                We don't automate. We orchestrate. We build velocity from metaphor.
+            <p class="hero-description">
+                We don't design — we compose.<br>
+                We don't automate — we orchestrate.<br>
+                We build motion from metaphor.
             </p>
-            <a href="#portfolio" class="btn-coral text-vvv-text font-semibold py-3 px-8 rounded-lg shadow-md inline-block">
-                View System Deployments
-            </a>
-        </section>
-
-        <!-- 02. Core Value Highlights -->
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20 text-center">
-            <!-- Card 1: Automation -->
-            <div class="bg-vvv-surface p-6 rounded-xl border border-vvv-divider">
-                <h3 class="text-3xl font-bold mb-2 text-vvv-purple">01</h3>
-                <h4 class="text-lg font-semibold text-vvv-text mb-2">Automation</h4>
-                <p class="text-sm text-vvv-muted">Scalable systems built for speed. The fusion of logic and velocity.</p>
+            <div class="hero-actions">
+                <a href="/services.html" class="btn btn-primary">View Systems</a>
+                <a href="/about.html" class="btn btn-secondary">Read Manifesto</a>
             </div>
-            <!-- Card 2: Artistry -->
-            <div class="bg-vvv-surface p-6 rounded-xl border border-vvv-divider">
-                <h3 class="text-3xl font-bold mb-2 text-vvv-purple">02</h3>
-                <h4 class="text-lg font-semibold text-vvv-text mb-2">Artistry</h4>
-                <p class="text-sm text-vvv-muted">Visual and linguistic elegance. Every asset is a designed sequence.</p>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+            <div class="gradient-orb"></div>
+        </div>
+    </section>
+
+    <!-- Core Values Grid -->
+    <section class="values">
+        <div class="container">
+            <div class="values-grid">
+                <div class="value-card">
+                    <span class="value-number">01</span>
+                    <h3 class="value-title">Automation</h3>
+                    <p class="value-description">
+                        Scalable systems built for speed. The fusion of logic and velocity.
+                    </p>
+                </div>
+                <div class="value-card">
+                    <span class="value-number">02</span>
+                    <h3 class="value-title">Artistry</h3>
+                    <p class="value-description">
+                        Visual and linguistic elegance. Every asset is a designed sequence.
+                    </p>
+                </div>
+                <div class="value-card">
+                    <span class="value-number">03</span>
+                    <h3 class="value-title">Precision</h3>
+                    <p class="value-description">
+                        Strategy disguised as design. Flawless execution where logic meets goal.
+                    </p>
+                </div>
             </div>
-            <!-- Card 3: Precision -->
-            <div class="bg-vvv-surface p-6 rounded-xl border border-vvv-divider">
-                <h3 class="text-3xl font-bold mb-2 text-vvv-purple">03</h3>
-                <h4 class="text-lg font-semibold text-vvv-text mb-2">Precision</h4>
-                <p class="text-sm text-vvv-muted">Strategy disguised as design. Flawless execution where logic meets goal.</p>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 03. Portfolio Showcase (Digital Assets & Consulting Content) -->
-        <section id="portfolio" class="py-16">
-            <h2 class="text-3xl sm:text-4xl font-bold mb-10 text-center border-b pb-4 border-vvv-divider uppercase tracking-widest text-vvv-text">
-                System Deployments & Case Logic
-            </h2>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Portfolio Item 1: Automation Workflow -->
-                <div class="group bg-vvv-surface rounded-xl overflow-hidden shadow-xl border border-vvv-divider hover:border-vvv-purple transition-all duration-300">
-                    <div class="relative overflow-hidden">
-                        <!-- Placeholder Image: System Architecture -->
-                        <img src="https://placehold.co/800x600/141418/6246EA?text=SYSTEM+01+%7C+AUTOMATION" alt="Automated Content Workflow" 
-                             class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                             onerror="this.onerror=null; this.src='https://placehold.co/800x600/141418/6246EA?text=LOAD+ERROR'">
-                        <div class="absolute inset-0 bg-vvv-purple/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <span class="text-sm font-semibold text-vvv-text p-2 rounded-full bg-vvv-coral/80">VIEW LOGIC</span>
-                        </div>
+    <!-- Services Preview -->
+    <section class="services-preview">
+        <div class="container">
+            <h2 class="section-title">System Architecture</h2>
+            <div class="services-grid">
+                <article class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
+                            <path d="M2 17L12 22L22 17"/>
+                            <path d="M2 12L12 17L22 12"/>
+                        </svg>
                     </div>
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold text-vvv-text">Content Automation Pipeline</h3>
-                        <p class="text-xs text-vvv-muted mt-1">Infrastructure for content scaling abstracted into modular data flow. Velocity: high.</p>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 2: Digital Asset Design -->
-                <div class="group bg-vvv-surface rounded-xl overflow-hidden shadow-xl border border-vvv-divider hover:border-vvv-purple transition-all duration-300">
-                    <div class="relative overflow-hidden">
-                        <!-- Placeholder Image: Digital Assets -->
-                        <img src="https://placehold.co/800x800/141418/E9622D?text=SYSTEM+02+%7C+DIGITAL+ASSET" alt="Engineered Digital Asset" 
-                             class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                             onerror="this.onerror=null; this.src='https://placehold.co/800x800/141418/E9622D?text=LOAD+ERROR'">
-                        <div class="absolute inset-0 bg-vvv-purple/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <span class="text-sm font-semibold text-vvv-text p-2 rounded-full bg-vvv-coral/80">VIEW LOGIC</span>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold text-vvv-text">Brand Linguistic Encoding</h3>
-                        <p class="text-xs text-vvv-muted mt-1">A study in visual architecture, composed with pure language parameters. Artistry applied.</p>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 3: Business Consulting Case -->
-                <div class="group bg-vvv-surface rounded-xl overflow-hidden shadow-xl border border-vvv-divider hover:border-vvv-purple transition-all duration-300">
-                    <div class="relative overflow-hidden">
-                        <!-- Placeholder Image: Strategy/Consulting -->
-                        <img src="https://placehold.co/800x600/141418/6246EA?text=SYSTEM+03+%7C+CONSULTING" alt="Strategic Consulting Case" 
-                             class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                             onerror="this.onerror=null; this.src='https://placehold.co/800x600/141418/6246EA?text=LOAD+ERROR'">
-                        <div class="absolute inset-0 bg-vvv-purple/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <span class="text-sm font-semibold text-vvv-text p-2 rounded-full bg-vvv-coral/80">VIEW LOGIC</span>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold text-vvv-text">Strategic Logic Gamma</h3>
-                        <p class="text-xs text-vvv-muted mt-1">Merging market complexity with perfect solution calculation. Precision-driven outcome.</p>
-                    </div>
-                </div>
+                    <h3>Content Infrastructure</h3>
+                    <p>Building the highway that future creators will move through. Scalable, modular, infinite.</p>
+                    <a href="/services.html#infrastructure" class="service-link">Explore System →</a>
+                </article>
                 
-                <!-- Placeholder Items for a fuller grid -->
-                <div class="group bg-vvv-surface rounded-xl overflow-hidden shadow-xl border border-vvv-divider hover:border-vvv-coral transition-all duration-300 hidden sm:block">
-                    <div class="relative overflow-hidden">
-                        <img src="https://placehold.co/800x600/141418/B9B9C0?text=SYSTEM+04+%7C+DATA+FLOW" alt="Grid Placeholder 4" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.03]">
+                <article class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="9" y1="9" x2="15" y2="9"/>
+                            <line x1="9" y1="15" x2="15" y2="15"/>
+                        </svg>
                     </div>
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold text-vvv-text">Data Synthesis Layer</h3>
-                        <p class="text-xs text-vvv-muted mt-1">Abstract concepts visualized for high-impact content flow.</p>
+                    <h3>Linguistic Engineering</h3>
+                    <p>Poetic coding — where automation meets artistry. Every phrase becomes choreography.</p>
+                    <a href="/services.html#linguistic" class="service-link">Explore System →</a>
+                </article>
+                
+                <article class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
                     </div>
-                </div>
-
-                <div class="group bg-vvv-surface rounded-xl overflow-hidden shadow-xl border border-vvv-divider hover:border-vvv-coral transition-all duration-300 hidden lg:block">
-                    <div class="relative overflow-hidden">
-                        <img src="https://placehold.co/800x800/141418/B9B9C0?text=SYSTEM+05+%7C+INFRASTRUCTURE" alt="Grid Placeholder 5" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.03]">
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold text-vvv-text">Infrastructure Architecture</h3>
-                        <p class="text-xs text-vvv-muted mt-1">The fusion of automation and emotion. Poetic coding realized in deployment.</p>
-                    </div>
-                </div>
-
-                <div class="group bg-vvv-surface rounded-xl overflow-hidden shadow-xl border border-vvv-divider hover:border-vvv-coral transition-all duration-300 hidden lg:block">
-                    <div class="relative overflow-hidden">
-                        <img src="https://placehold.co/800x600/141418/B9B9C0?text=SYSTEM+06+%7C+OPTIMIZATION" alt="Grid Placeholder 6" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.03]">
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold text-vvv-text">Optimization Logic Suite</h3>
-                        <p class="text-xs text-vvv-muted mt-1">Accelerated project velocity running at the speed of maximum efficiency.</p>
-                    </div>
-                </div>
+                    <h3>Velocity Optimization</h3>
+                    <p>Content that accelerates growth. Systems running at the speed of imagination.</p>
+                    <a href="/services.html#velocity" class="service-link">Explore System →</a>
+                </article>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 04. Linguistic Architecture Engine (Gemini API Feature) -->
-        <section id="engine" class="py-16">
-            <h2 class="text-3xl sm:text-4xl font-bold mb-10 text-center border-b pb-4 border-vvv-divider uppercase tracking-widest text-vvv-text">
-                Linguistic Architecture Engine
-            </h2>
-            <div class="bg-vvv-surface p-8 rounded-xl max-w-4xl mx-auto border border-vvv-divider shadow-2xl">
-                <p class="text-vvv-muted mb-4 text-sm">
-                    **Automation in Action:** Test our core value of Linguistic Art by generating a **Cinematic System Narrative** for a business challenge.
-                </p>
-
-                <div class="mb-6">
-                    <label for="concept-input" class="block text-sm font-medium text-vvv-muted mb-2">
-                        Input Business Challenge (e.g., "Need to automate content creation for a new product launch.")
-                    </label>
-                    <input type="text" id="concept-input" 
-                           placeholder="Enter your concept..."
-                           class="w-full bg-vvv-charcoal text-vvv-text p-3 rounded-lg border border-vvv-divider focus:border-vvv-purple focus:ring-1 focus:ring-vvv-purple transition-colors">
-                </div>
-
-                <div class="flex items-center space-x-4 mb-6">
-                    <button id="generate-button" class="btn-purple text-vvv-text font-semibold py-3 px-8 rounded-lg flex items-center justify-center">
-                        <span id="button-text">✨ Generate System Narrative</span>
-                        <div id="loader" class="loader hidden ml-2"></div>
-                    </button>
-                </div>
-
-                <div id="narrative-output" class="min-h-[6rem] bg-vvv-charcoal p-4 rounded-lg border border-vvv-divider flex items-center">
-                    <p class="text-vvv-muted italic text-sm">Output will appear here...</p>
-                </div>
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Build Your Infrastructure?</h2>
+                <p>Let's merge automation and artistry for your next high-impact system.</p>
+                <a href="/contact.html" class="btn btn-coral">Start the Dialogue</a>
             </div>
-        </section>
-        
-        <!-- 05. Contact / CTA Section (Renumbered) -->
-        <section id="contact" class="py-20 text-center">
-            <div class="bg-vvv-surface p-10 rounded-xl max-w-4xl mx-auto border border-vvv-divider shadow-2xl">
-                <h2 class="text-3xl font-bold mb-4 text-vvv-text">
-                    Ready to <span class="text-vvv-coral">Orchestrate</span> Motion?
-                </h2>
-                <p class="text-vvv-muted mb-8 max-w-2xl mx-auto">
-                    Let's discuss how to merge **Automation** and **Artistry** for your next high-impact content system.
-                </p>
-                <a href="#" class="btn-coral text-vvv-text font-semibold py-3 px-10 rounded-lg shadow-lg inline-block text-lg">
-                    Start the Dialogue
-                </a>
-            </div>
-        </section>
-
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="mt-20 border-t border-vvv-divider py-8 text-center bg-vvv-surface/50">
-        <p class="text-xs text-vvv-muted">
-            VVVDigitals &copy; 2025. Commanding Motion with Pure Language.
-        </p>
-        <p class="text-xs text-vvv-muted mt-1">
-             <span class="text-vvv-purple">Automation</span> | <span class="text-vvv-purple">Artistry</span> | <span class="text-vvv-purple">Precision</span>
-        </p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">VVVDigitals</span>
+                    <p class="footer-tagline">Commanding motion with pure language.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="/about.html">Manifesto</a>
+                    <a href="/services.html">Systems</a>
+                    <a href="/blog/">Essays</a>
+                    <a href="/contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 VVVDigitals. MIT Licensed.</p>
+            </div>
+        </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
