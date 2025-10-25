@@ -77,7 +77,7 @@ vvvdigitals/
 - **Mobile First**: Fully responsive design
 - **Accessibility**: ARIA labels, semantic HTML
 - **SEO Ready**: Meta tags, structured data ready
-- **Performance**: < 500ms TTFB target
+- **Performance**: &lt; 500ms TTFB target
 
 ## 🛠 Customization
 
@@ -128,7 +128,7 @@ Template: blocksy
 
 - [ ] Update meta descriptions
 - [ ] Add favicon and touch icons
-- [ ] Compress images (<100kb each)
+- [ ] Compress images (&lt; 100kb each)
 - [ ] Set up SSL certificate
 - [ ] Configure redirects
 - [ ] Test on mobile devices
@@ -144,10 +144,10 @@ Template: blocksy
 ## 📈 Performance Targets
 
 - **Lighthouse Score**: 95+
-- **First Contentful Paint**: < 1.5s
-- **Time to Interactive**: < 3.5s
-- **Cumulative Layout Shift**: < 0.1
-- **Total Page Weight**: < 1MB
+- **First Contentful Paint**: &lt; 1.5s
+- **Time to Interactive**: &lt; 3.5s
+- **Cumulative Layout Shift**: &lt; 0.1
+- **Total Page Weight**: &lt; 1MB
 
 ## 🔒 Security
 
