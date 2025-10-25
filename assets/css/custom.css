@@ -8,7 +8,9 @@
    ============================================ */
 .manifesto-hero {
     padding: var(--space-4xl) 0 var(--space-3xl);
-    background: linear-gradient(180deg, transparent 0%, var(--vvv-surface) 100%);
+    background:
+        radial-gradient(circle at 18% 12%, rgba(103, 88, 243, 0.18) 0%, transparent 55%),
+        linear-gradient(180deg, rgba(14, 22, 39, 0.95) 0%, rgba(9, 15, 28, 0.98) 100%);
 }
 
 .manifesto-header {
@@ -44,20 +46,20 @@
     font-size: var(--text-lg);
     font-weight: 500;
     margin-bottom: var(--space-xl);
-    color: var(--color-text);
+    color: rgba(247, 249, 252, 0.92);
 }
 
 .manifesto-content p {
     font-size: var(--text-base);
     line-height: 1.8;
-    color: var(--color-text-muted);
+    color: rgba(192, 203, 231, 0.82);
     margin-bottom: var(--space-lg);
 }
 
 .manifesto-quote {
     margin: var(--space-3xl) 0;
     padding: var(--space-2xl);
-    background: var(--color-surface);
+    background: linear-gradient(150deg, rgba(21, 30, 52, 0.9), rgba(11, 18, 33, 0.9));
     border-left: 4px solid var(--vvv-grad);
     border-radius: var(--radius-md);
     font-size: var(--text-xl);
@@ -66,6 +68,7 @@
     text-align: center;
     color: var(--color-text);
     position: relative;
+    box-shadow: 0 18px 36px rgba(9, 13, 24, 0.35);
 }
 
 .manifesto-quote::before {
@@ -88,15 +91,16 @@
 .manifesto-value {
     text-align: center;
     padding: var(--space-xl);
-    background: var(--color-surface);
+    background: linear-gradient(155deg, rgba(21, 30, 52, 0.92), rgba(11, 18, 33, 0.92));
     border-radius: var(--radius-lg);
-    border: 1px solid var(--color-border);
+    border: 1px solid rgba(96, 109, 151, 0.16);
     transition: all var(--transition-base);
+    box-shadow: 0 18px 32px rgba(9, 13, 24, 0.35);
 }
 
 .manifesto-value:hover {
-    transform: translateY(-4px);
-    border-color: var(--vvv-purple);
+    transform: translateY(-6px);
+    border-color: rgba(103, 88, 243, 0.45);
 }
 
 .value-icon {
@@ -113,15 +117,17 @@
 .manifesto-value p {
     font-size: var(--text-sm);
     margin-bottom: 0;
+    color: rgba(192, 203, 231, 0.82);
 }
 
 .manifesto-cta {
     text-align: center;
     padding: var(--space-3xl);
-    background: var(--color-surface);
+    background: linear-gradient(160deg, rgba(21, 30, 52, 0.92), rgba(11, 18, 33, 0.92));
     border-radius: var(--radius-xl);
     margin-top: var(--space-4xl);
-    border: 1px solid var(--color-border);
+    border: 1px solid rgba(96, 109, 151, 0.16);
+    box-shadow: 0 22px 48px rgba(9, 13, 24, 0.4);
 }
 
 /* ============================================
@@ -147,7 +153,7 @@
 }
 
 .service-detail.alt-bg {
-    background: var(--color-surface);
+    background: linear-gradient(160deg, rgba(16, 24, 40, 0.92), rgba(10, 17, 30, 0.96));
 }
 
 .service-header {
@@ -207,7 +213,7 @@
     content: '→';
     position: absolute;
     left: 0;
-    color: var(--vvv-coral);
+    color: rgba(103, 88, 243, 0.75);
     font-weight: bold;
 }
 
@@ -220,39 +226,42 @@
 
 .tech-badge {
     padding: var(--space-xs) var(--space-md);
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
+    background: rgba(16, 24, 40, 0.75);
+    border: 1px solid rgba(96, 109, 151, 0.16);
     border-radius: var(--radius-sm);
     font-size: var(--text-sm);
     font-weight: 500;
     transition: all var(--transition-fast);
+    backdrop-filter: blur(6px);
 }
 
 .tech-badge:hover {
-    border-color: var(--vvv-purple);
-    color: var(--vvv-purple);
+    border-color: rgba(103, 88, 243, 0.45);
+    color: var(--color-text);
 }
 
 /* Architecture Diagram */
 .architecture-diagram {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
+    background: linear-gradient(160deg, rgba(21, 30, 52, 0.92), rgba(11, 18, 33, 0.92));
+    border: 1px solid rgba(96, 109, 151, 0.16);
     border-radius: var(--radius-lg);
     padding: var(--space-xl);
+    box-shadow: 0 20px 44px rgba(9, 13, 24, 0.35);
 }
 
 .arch-layer {
     margin-bottom: var(--space-lg);
     padding: var(--space-md);
-    background: var(--vvv-charcoal);
+    background: rgba(10, 17, 30, 0.75);
     border-radius: var(--radius-md);
-    border: 1px solid var(--color-border);
+    border: 1px solid rgba(96, 109, 151, 0.16);
     transition: all var(--transition-base);
+    backdrop-filter: blur(4px);
 }
 
 .arch-layer:hover {
-    border-color: var(--vvv-purple);
-    transform: translateX(4px);
+    border-color: rgba(103, 88, 243, 0.45);
+    transform: translateX(6px);
 }
 
 .layer-label {
@@ -264,16 +273,17 @@
 
 .layer-content {
     font-size: var(--text-sm);
-    color: var(--color-text-muted);
+    color: rgba(192, 203, 231, 0.82);
 }
 
 /* Code Preview */
 .code-preview {
-    background: var(--vvv-charcoal);
-    border: 1px solid var(--color-border);
+    background: rgba(10, 17, 30, 0.85);
+    border: 1px solid rgba(96, 109, 151, 0.16);
     border-radius: var(--radius-lg);
     padding: var(--space-xl);
     overflow-x: auto;
+    box-shadow: 0 20px 44px rgba(9, 13, 24, 0.35);
 }
 
 .code-preview pre {
@@ -298,22 +308,23 @@
 .metric {
     text-align: center;
     padding: var(--space-lg);
-    background: var(--color-surface);
+    background: linear-gradient(150deg, rgba(21, 30, 52, 0.92), rgba(11, 18, 33, 0.92));
     border-radius: var(--radius-md);
-    border: 1px solid var(--color-border);
+    border: 1px solid rgba(96, 109, 151, 0.16);
+    box-shadow: 0 18px 36px rgba(9, 13, 24, 0.35);
 }
 
 .metric-value {
     display: block;
     font-size: var(--text-3xl);
     font-weight: 900;
-    color: var(--vvv-coral);
+    color: #f3c08f;
     margin-bottom: var(--space-xs);
 }
 
 .metric-label {
     font-size: var(--text-sm);
-    color: var(--color-text-muted);
+    color: rgba(192, 203, 231, 0.72);
 }
 
 /* Velocity Chart */
@@ -323,15 +334,16 @@
     justify-content: space-around;
     height: 300px;
     padding: var(--space-xl);
-    background: var(--color-surface);
+    background: linear-gradient(160deg, rgba(21, 30, 52, 0.92), rgba(11, 18, 33, 0.92));
     border-radius: var(--radius-lg);
-    border: 1px solid var(--color-border);
+    border: 1px solid rgba(96, 109, 151, 0.16);
+    box-shadow: 0 20px 44px rgba(9, 13, 24, 0.35);
 }
 
 .chart-bar {
     width: 120px;
     height: var(--height);
-    background: var(--color-border);
+    background: rgba(96, 109, 151, 0.28);
     border-radius: var(--radius-sm) var(--radius-sm) 0 0;
     display: flex;
     align-items: flex-end;
@@ -387,7 +399,7 @@
 
 .process-step p {
     font-size: var(--text-sm);
-    color: var(--color-text-muted);
+    color: rgba(192, 203, 231, 0.72);
 }
 
 .process-connector {
@@ -418,19 +430,20 @@
 .form-textarea {
     width: 100%;
     padding: var(--space-md);
-    background: var(--vvv-charcoal);
-    border: 1px solid var(--color-border);
+    background: rgba(10, 17, 30, 0.85);
+    border: 1px solid rgba(96, 109, 151, 0.16);
     border-radius: var(--radius-md);
     color: var(--color-text);
     font-family: var(--font-sans);
     transition: all var(--transition-fast);
+    backdrop-filter: blur(4px);
 }
 
 .form-input:focus,
 .form-textarea:focus {
     outline: none;
-    border-color: var(--vvv-purple);
-    box-shadow: 0 0 0 3px rgba(98, 70, 234, 0.1);
+    border-color: rgba(103, 88, 243, 0.45);
+    box-shadow: 0 0 0 3px rgba(103, 88, 243, 0.15);
 }
 
 .form-textarea {
@@ -481,7 +494,7 @@
 
 .contact-subtitle {
     font-size: var(--text-xl);
-    color: var(--color-text-muted);
+    color: rgba(192, 203, 231, 0.82);
 }
 
 .contact-section {
@@ -500,16 +513,17 @@
 }
 
 .form-intro {
-    color: var(--color-text-muted);
+    color: rgba(192, 203, 231, 0.72);
     margin-bottom: var(--space-2xl);
 }
 
 .info-card {
-    background: var(--color-surface);
+    background: linear-gradient(155deg, rgba(21, 30, 52, 0.92), rgba(11, 18, 33, 0.92));
     padding: var(--space-xl);
     border-radius: var(--radius-lg);
-    border: 1px solid var(--color-border);
+    border: 1px solid rgba(96, 109, 151, 0.16);
     margin-bottom: var(--space-xl);
+    box-shadow: 0 18px 36px rgba(9, 13, 24, 0.35);
 }
 
 .info-card h3 {
@@ -528,7 +542,7 @@
 }
 
 .info-card a {
-    color: var(--vvv-coral);
+    color: rgba(243, 192, 143, 0.95);
     text-decoration: none;
     transition: color var(--transition-fast);
 }
@@ -548,7 +562,7 @@
     position: relative;
     padding-left: var(--space-2xl);
     margin-bottom: var(--space-sm);
-    color: var(--color-text-muted);
+    color: rgba(192, 203, 231, 0.72);
 }
 
 .process-list {
@@ -567,14 +581,14 @@
     position: relative;
     padding-left: var(--space-xl);
     margin-bottom: var(--space-sm);
-    color: var(--color-text-muted);
+    color: rgba(192, 203, 231, 0.72);
 }
 
 .requirement-list li::before {
     content: '✓';
     position: absolute;
     left: 0;
-    color: var(--vvv-coral);
+    color: rgba(243, 192, 143, 0.95);
     font-weight: bold;
 }
 
@@ -594,7 +608,7 @@
 
 /* FAQ Styles */
 .faq {
-    background: var(--color-surface);
+    background: linear-gradient(160deg, rgba(16, 24, 40, 0.94), rgba(9, 15, 28, 0.98));
 }
 
 .faq-grid {
@@ -606,9 +620,11 @@
 
 .faq-item {
     padding: var(--space-xl);
-    background: var(--vvv-charcoal);
+    background: rgba(10, 17, 30, 0.78);
     border-radius: var(--radius-lg);
-    border: 1px solid var(--color-border);
+    border: 1px solid rgba(96, 109, 151, 0.16);
+    box-shadow: 0 18px 36px rgba(9, 13, 24, 0.35);
+    backdrop-filter: blur(6px);
 }
 
 .faq-item h3 {
@@ -618,17 +634,17 @@
 }
 
 .faq-item p {
-    color: var(--color-text-muted);
+    color: rgba(192, 203, 231, 0.82);
     margin: 0;
 }
 
 /* Form Success/Error States */
 .form-success {
     padding: var(--space-md);
-    background: rgba(233, 98, 45, 0.1);
-    border: 1px solid var(--vvv-coral);
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.45);
     border-radius: var(--radius-md);
-    color: var(--vvv-coral);
+    color: #34d399;
     margin-top: var(--space-lg);
     text-align: center;
     animation: fadeIn var(--transition-base);
